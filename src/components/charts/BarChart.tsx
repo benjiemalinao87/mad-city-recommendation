@@ -16,14 +16,18 @@ interface DataPoint {
   [key: string]: any;
 }
 
+interface BarConfig {
+  dataKey: string;
+  fill: string;
+  name?: string;
+  radius?: number | [number, number, number, number];
+  maxBarSize?: number;
+}
+
 interface BarChartProps {
   data: DataPoint[];
   xAxisKey: string;
-  bars: {
-    dataKey: string;
-    fill: string;
-    name?: string;
-  }[];
+  bars: BarConfig[];
   title?: string;
   subtitle?: string;
   height?: number;
@@ -42,7 +46,7 @@ const BarChart: React.FC<BarChartProps> = ({
     margin: { top: 20, right: 30, left: 20, bottom: 60 },
     bars: bars.map(bar => ({
       ...bar,
-      radius: [4, 4, 0, 0], // Rounded top corners
+      radius: [4, 4, 0, 0] as [number, number, number, number], // Rounded top corners
       maxBarSize: 50,
     }))
   }), [bars]);

@@ -6,11 +6,29 @@ import BarChart from '@/components/charts/BarChart';
 import LineChart from '@/components/charts/LineChart';
 import RecommendationCard from '@/components/cards/RecommendationCard';
 import DataTable from '@/components/tables/DataTable';
-import { parseOptimalSendingTimes } from '@/utils/csvParser';
+import { parseOptimalMessageSendingTimes } from '@/utils/csvParser';
+
+interface OptimalTimeData {
+  lead_source: string;
+  hour: number;
+  response_count: number;
+}
+
+interface ConversionData {
+  lead_source: string;
+  optimal_hour: number;
+  response_rate: number;
+  conversion_rate: number;
+}
+
+interface HourlyData {
+  hour: number;
+  [key: string]: number;
+}
 
 // This would normally be fetched from an API or parsed from the CSV files
 // For now, we're using sample data
-const sampleOptimalTimesData = [
+const sampleOptimalTimesData: OptimalTimeData[] = [
   { lead_source: 'Exclusive', hour: 9, response_count: 3481 },
   { lead_source: 'Exclusive', hour: 10, response_count: 2876 },
   { lead_source: 'Exclusive', hour: 11, response_count: 2345 },
@@ -43,7 +61,7 @@ const sampleOptimalTimesData = [
 ];
 
 // Sample data for conversion rates
-const conversionRateData = [
+const conversionRateData: ConversionData[] = [
   { lead_source: 'Exclusive', optimal_hour: 9, response_rate: 32.5, conversion_rate: 12.8 },
   { lead_source: 'Internet', optimal_hour: 9, response_rate: 45.2, conversion_rate: 18.7 },
   { lead_source: 'Home Advisor', optimal_hour: 9, response_rate: 28.7, conversion_rate: 10.2 },
@@ -52,10 +70,10 @@ const conversionRateData = [
 ];
 
 // Prepare data for hourly comparison chart
-const prepareHourlyComparisonData = () => {
+const prepareHourlyComparisonData = (): HourlyData[] => {
   const hours = [9, 10, 11, 12, 13];
   return hours.map(hour => {
-    const hourData = { hour };
+    const hourData: HourlyData = { hour };
     sampleOptimalTimesData
       .filter(d => d.hour === hour)
       .forEach(d => {

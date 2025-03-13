@@ -6,75 +6,80 @@ import { motion } from 'framer-motion';
 interface RecommendationCardProps {
   title: string;
   description: string;
-  actionText?: string;
-  onAction?: () => void;
-  type?: 'info' | 'success' | 'warning';
+  category: string;
+  impact: 'low' | 'medium' | 'high';
+  implementation: 'easy' | 'medium' | 'complex';
+  actionItems: string[];
 }
 
 const RecommendationCard: React.FC<RecommendationCardProps> = ({
   title,
   description,
-  actionText,
-  onAction,
-  type = 'info'
+  category,
+  impact,
+  implementation,
+  actionItems,
 }) => {
-  const colors = {
-    info: {
-      bg: 'bg-blue-50/50',
-      border: 'border-blue-100',
-      text: 'text-blue-700',
-      icon: '📊'
-    },
-    success: {
-      bg: 'bg-green-50/50',
-      border: 'border-green-100',
-      text: 'text-green-700',
-      icon: '✨'
-    },
-    warning: {
-      bg: 'bg-yellow-50/50',
-      border: 'border-yellow-100',
-      text: 'text-yellow-700',
-      icon: '⚡️'
+  const getImpactColor = (impact: string) => {
+    switch (impact) {
+      case 'high': return 'text-blue-600';
+      case 'medium': return 'text-purple-600';
+      case 'low': return 'text-gray-600';
+      default: return 'text-gray-600';
+    }
+  };
+
+  const getImplementationColor = (implementation: string) => {
+    switch (implementation) {
+      case 'easy': return 'text-green-600';
+      case 'medium': return 'text-yellow-600';
+      case 'complex': return 'text-red-600';
+      default: return 'text-gray-600';
     }
   };
 
   return (
     <motion.div
-      className={`
-        rounded-xl backdrop-blur-sm border
-        ${colors[type].bg}
-        ${colors[type].border}
-        overflow-hidden
-      `}
+      className="mac-card overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
       <div className="p-6">
-        <div className="flex items-start">
-          <span className="text-2xl mr-4">{colors[type].icon}</span>
-          <div>
-            <h3 className={`text-lg font-medium mb-2 ${colors[type].text}`}>
+        <div className="flex items-start space-x-4">
+          <div className="flex-1">
+            <h3 className="text-lg font-medium text-gray-900 mb-1">
               {title}
             </h3>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-sm text-gray-600 mb-4">
               {description}
             </p>
-            {actionText && onAction && (
-              <button
-                onClick={onAction}
-                className={`
-                  mt-4 px-4 py-2 rounded-lg text-sm font-medium
-                  transition-colors duration-150
-                  ${colors[type].bg}
-                  ${colors[type].text}
-                  hover:bg-opacity-75
-                `}
-              >
-                {actionText}
-              </button>
-            )}
+            
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="flex items-center">
+                <span className="text-xs uppercase tracking-wide text-gray-500 mr-2">Impact:</span>
+                <span className={`text-sm font-medium ${getImpactColor(impact)}`}>
+                  {impact.charAt(0).toUpperCase() + impact.slice(1)}
+                </span>
+              </div>
+              <div className="flex items-center">
+                <span className="text-xs uppercase tracking-wide text-gray-500 mr-2">Effort:</span>
+                <span className={`text-sm font-medium ${getImplementationColor(implementation)}`}>
+                  {implementation.charAt(0).toUpperCase() + implementation.slice(1)}
+                </span>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              {actionItems.map((item, index) => (
+                <div key={index} className="flex items-start">
+                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-blue-100 text-blue-600 text-xs mr-3 flex-shrink-0">
+                    {index + 1}
+                  </span>
+                  <span className="text-sm text-gray-600">{item}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
