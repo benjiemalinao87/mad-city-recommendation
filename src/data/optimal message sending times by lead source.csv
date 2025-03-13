@@ -1,0 +1,615 @@
+lead_source,hour_of_day,response_count
+,12,834
+,11,787
+,13,781
+,15,753
+,16,717
+,17,708
+,10,701
+,14,641
+,9,553
+,18,506
+,19,445
+,20,440
+,21,402
+,8,342
+,22,313
+,7,219
+,0,173
+,23,157
+,6,126
+,1,114
+,4,71
+,3,63
+,5,55
+,2,51
+2019 MAD Brat Fest,18,1
+2019 MAD Brat Fest,21,1
+2024 CINDY House and Outdoor Living Show,18,2
+2024 CINDY House and Outdoor Living Show,11,2
+2024 GB Fondue Fest,9,1
+2024 GB Sheboygan County Fair,10,2
+2024 GB Sheboygan County Fair,14,1
+2024 KC Home Show,10,1
+2024 LCEAU Platteville Dairy Days,11,1
+2024 LCEAU Prescott Daze,14,5
+2024 LCEAU Prescott Daze,11,2
+2024 LOU Louisvile Home Show,15,1
+2024 RAL Cumberland County Fair,14,1
+2024 RAL Cumberland County Fair,9,1
+2024 RAL Cumberland County Fair,10,1
+2024 RAL Wilson County Fair,9,1
+2024 RAL Wilson County Fair,10,1
+2nd Sweepstakes,17,1
+ALB ABC 4pm News,11,1
+Angie's List,16,2
+Angie's List,15,1
+Angie's List,14,1
+Angie's List,17,1
+Canvass,10,703
+Canvass,11,324
+Canvass,9,322
+Canvass,17,298
+Canvass,15,265
+Canvass,12,261
+Canvass,16,255
+Canvass,13,241
+Canvass,18,238
+Canvass,14,231
+Canvass,19,186
+Canvass,20,138
+Canvass,8,75
+Canvass,21,64
+Canvass,22,48
+Canvass,7,36
+Canvass,23,25
+Canvass,6,15
+Canvass,4,10
+Canvass,2,6
+Canvass,3,6
+Canvass,5,5
+Canvass,1,3
+Canvass,0,3
+Chat,9,1
+Chat,7,1
+Coatings,21,1
+Craft Jack,10,1
+Digital,16,7
+Digital,12,1
+Digital,13,1
+Direct Mail,15,7
+Direct Mail,10,6
+Direct Mail,12,6
+Direct Mail,14,6
+Direct Mail,9,5
+Direct Mail,16,5
+Direct Mail,18,4
+Direct Mail,11,4
+Direct Mail,19,4
+Direct Mail,21,4
+Direct Mail,8,2
+Direct Mail,7,1
+Direct Mail,23,1
+Direct Mail,17,1
+Direct Mail,20,1
+Direct Mail,13,1
+DoLead,7,1
+DoLead,13,1
+Duplicate,16,2
+Empty Lead Source,20,1
+Empty Lead Source,18,1
+Empty Lead Source,12,1
+Empty Lead Source,14,1
+Exact Customer,9,68
+Exact Customer,15,30
+Exact Customer,12,28
+Exact Customer,13,26
+Exact Customer,11,23
+Exact Customer,10,22
+Exact Customer,18,22
+Exact Customer,16,20
+Exact Customer,14,20
+Exact Customer,17,13
+Exact Customer,20,11
+Exact Customer,19,10
+Exact Customer,21,5
+Exact Customer,23,1
+Exclusive,9,"3,481"
+Exclusive,10,"2,386"
+Exclusive,11,"2,193"
+Exclusive,13,"2,120"
+Exclusive,14,"2,005"
+Exclusive,12,"1,970"
+Exclusive,15,"1,950"
+Exclusive,16,"1,594"
+Exclusive,18,"1,397"
+Exclusive,17,"1,385"
+Exclusive,19,"1,365"
+Exclusive,20,"1,215"
+Exclusive,21,493
+Exclusive,22,143
+Exclusive,8,120
+Exclusive,7,80
+Exclusive,23,70
+Exclusive,6,52
+Exclusive,0,36
+Exclusive,1,28
+Exclusive,5,21
+Exclusive,2,16
+Exclusive,4,13
+Exclusive,3,12
+Facebook,5,1
+Facebook,14,1
+Google Local,10,1
+Google Local,12,1
+Google-SEM-CPC,13,5
+Google-SEM-CPC,18,5
+Google-SEM-CPC,9,4
+Google-SEM-CPC,11,4
+Google-SEM-CPC,17,4
+Google-SEM-CPC,12,3
+Google-SEM-CPC,14,3
+Google-SEM-CPC,19,3
+Google-SEM-CPC,20,2
+Google-SEM-CPC,16,2
+Google-SEM-CPC,15,2
+Google-SEM-CPC,10,1
+Home Advisor,9,127
+Home Advisor,11,69
+Home Advisor,12,68
+Home Advisor,15,67
+Home Advisor,16,65
+Home Advisor,10,62
+Home Advisor,13,59
+Home Advisor,14,58
+Home Advisor,20,48
+Home Advisor,19,48
+Home Advisor,17,45
+Home Advisor,18,33
+Home Advisor,21,11
+Home Advisor,8,6
+Home Advisor,22,6
+Home Advisor,0,4
+Home Advisor,1,2
+Home Advisor,7,2
+Home Advisor,23,2
+Home Advisor,4,1
+Home Advisor,2,1
+Home Advisor,5,1
+Home Show,10,157
+Home Show,9,115
+Home Show,11,91
+Home Show,13,60
+Home Show,14,60
+Home Show,12,45
+Home Show,16,44
+Home Show,15,42
+Home Show,17,40
+Home Show,19,32
+Home Show,18,25
+Home Show,20,22
+Home Show,8,13
+Home Show,21,12
+Home Show,22,6
+Home Show,7,4
+Home Show,6,4
+Home Show,23,2
+Home Show,4,1
+Internet,9,"4,320"
+Internet,10,"2,522"
+Internet,11,"2,136"
+Internet,14,"1,912"
+Internet,12,"1,905"
+Internet,13,"1,844"
+Internet,15,"1,820"
+Internet,16,"1,595"
+Internet,17,"1,320"
+Internet,18,"1,161"
+Internet,19,"1,118"
+Internet,20,"1,020"
+Internet,21,343
+Internet,8,138
+Internet,22,129
+Internet,7,100
+Internet,23,85
+Internet,6,44
+Internet,0,39
+Internet,5,32
+Internet,1,28
+Internet,3,19
+Internet,4,19
+Internet,2,17
+KC Valpak,17,1
+Key Words,21,2
+Key Words,17,2
+Key Words,16,2
+Key Words,23,1
+Key Words,11,1
+Key Words,18,1
+Key Words,15,1
+Key Words,9,1
+Keyword Connect Digital,20,10
+Keyword Connect Digital,9,6
+Keyword Connect Digital,10,5
+Keyword Connect Digital,15,4
+Keyword Connect Digital,17,4
+Keyword Connect Digital,14,4
+Keyword Connect Digital,11,3
+Keyword Connect Digital,21,3
+Keyword Connect Digital,19,3
+Keyword Connect Digital,13,3
+Keyword Connect Digital,12,3
+Keyword Connect Digital,16,1
+Keyword Connect Digital,18,1
+Lavin,9,147
+Lavin,10,111
+Lavin,15,110
+Lavin,16,105
+Lavin,12,96
+Lavin,13,96
+Lavin,14,95
+Lavin,18,90
+Lavin,17,87
+Lavin,20,87
+Lavin,19,73
+Lavin,11,67
+Lavin,21,33
+Lavin,0,6
+Lavin,8,5
+Lavin,22,5
+Lavin,23,5
+Lavin,7,5
+Lavin,4,2
+Lavin,5,2
+Lavin,1,1
+Lavin,6,1
+Lavin,3,1
+LCEAU Valpak,8,1
+LL MEDIA,3,4
+LL MEDIA,16,3
+LL MEDIA,15,3
+LL MEDIA,13,2
+LL MEDIA,14,2
+LL MEDIA,12,2
+LL MEDIA,10,2
+LL MEDIA,18,1
+LL MEDIA,9,1
+LUXURY BATH SITE,13,4
+LUXURY BATH SITE,16,3
+LUXURY BATH SITE,15,3
+LUXURY BATH SITE,20,3
+LUXURY BATH SITE,10,3
+LUXURY BATH SITE,11,2
+LUXURY BATH SITE,23,1
+LUXURY BATH SITE,1,1
+LUXURY BATH SITE,9,1
+LUXURY BATH SITE,12,1
+LUXURY BATH SITE,18,1
+Malls,10,13
+Malls,14,8
+Malls,11,7
+Malls,15,5
+Malls,17,4
+Malls,13,4
+Malls,9,3
+Malls,20,3
+Malls,18,3
+Malls,12,2
+Malls,16,2
+Malls,8,1
+Malls,19,1
+Malls,0,1
+Malls,7,1
+MHR Beaver Dam #1012,15,1
+MHR Cincinnati #4069,9,1
+MHR Coralville #2827,14,4
+MHR Coralville #2827,10,2
+MHR Coralville #2827,12,1
+MHR Coralville #2827,20,1
+MHR Coralville #2827,19,1
+MHR Indy #2787,15,1
+MHR Indy #2787,11,1
+MHR Kansas City #232,13,1
+MHR La Grange #1053,12,1
+MHR La Grange #1053,11,1
+MHR Lewis Center #2725,14,1
+MHR Raleigh #5118,11,1
+MHR Raleigh #5118,13,1
+MHR Raleigh #5118,9,1
+MHR West Bend #2658,12,2
+MNROCH NBC 6pm News,10,2
+Modernize,9,184
+Modernize,10,80
+Modernize,13,73
+Modernize,16,66
+Modernize,15,61
+Modernize,18,60
+Modernize,11,55
+Modernize,14,55
+Modernize,12,52
+Modernize,20,46
+Modernize,17,42
+Modernize,19,28
+Modernize,21,11
+Modernize,8,6
+Modernize,22,4
+Modernize,23,3
+Modernize,6,2
+Modernize,5,2
+Modernize,7,1
+Modernize,0,1
+Modernize,2,1
+Modernize,1,1
+Modernize,4,1
+Modernize Exclusive,9,12
+Modernize Exclusive,15,7
+Modernize Exclusive,21,6
+Modernize Exclusive,16,4
+Modernize Exclusive,17,4
+Modernize Exclusive,10,4
+Modernize Exclusive,11,4
+Modernize Exclusive,12,3
+Modernize Exclusive,19,3
+Modernize Exclusive,20,3
+Modernize Exclusive,8,2
+Modernize Exclusive,7,1
+Modernize Exclusive,18,1
+Modernize Exclusive,14,1
+Mr Remodeler,9,1
+Mr Remodeler,14,1
+Mr Remodeler,11,1
+Newspaper,11,1
+NWA,10,8
+NWA,19,7
+NWA,12,6
+NWA,11,4
+NWA,14,4
+NWA,18,3
+NWA,20,2
+NWA,13,1
+NWA,17,1
+NYROCH NBC Noon News,17,1
+Office,15,2
+Porch,9,19
+Porch,11,8
+Porch,14,6
+Porch,18,6
+Porch,20,5
+Porch,17,5
+Porch,10,4
+Porch,13,4
+Porch,12,3
+Porch,15,3
+Porch,19,3
+Porch,16,2
+Porch,5,1
+Porch,21,1
+Porch,7,1
+Quinstreet.com,13,1
+Quinstreet.com,17,1
+Quinstreet.com,16,1
+RAINMAKER,17,1
+RAINMAKER,13,1
+RAINMAKER,22,1
+Referral,12,3
+Referral,14,3
+Referral,22,2
+Referral,17,1
+Referral,10,1
+Referral,13,1
+Rehash,9,77
+Rehash,15,47
+Rehash,10,46
+Rehash,16,39
+Rehash,11,37
+Rehash,12,30
+Rehash,13,22
+Rehash,18,22
+Rehash,17,20
+Rehash,14,17
+Rehash,20,14
+Rehash,19,13
+Rehash,21,9
+Rehash,8,4
+Rehash,0,2
+Rehash,7,2
+Rehash,1,1
+Rehash,23,1
+Rehash,22,1
+Rehash,6,1
+RemoPro,10,63
+RemoPro,9,55
+RemoPro,15,54
+RemoPro,12,44
+RemoPro,11,36
+RemoPro,17,33
+RemoPro,16,32
+RemoPro,13,29
+RemoPro,14,28
+RemoPro,19,24
+RemoPro,20,19
+RemoPro,18,19
+RemoPro,8,7
+RemoPro,23,5
+RemoPro,21,5
+RemoPro,6,4
+RemoPro,22,3
+RemoPro,1,3
+RemoPro,7,3
+RemoPro,3,2
+RemoPro,2,2
+RemoPro,5,1
+Repeat,10,7
+Repeat,9,3
+Repeat,13,2
+Repeat,12,2
+Repeat,18,2
+Repeat,16,2
+Repeat,23,2
+Repeat,15,1
+Repeat,11,1
+Repeat,3,1
+Sams Club,10,19
+Sams Club,11,16
+Sams Club,12,14
+Sams Club,13,13
+Sams Club,9,11
+Sams Club,15,10
+Sams Club,17,9
+Sams Club,18,8
+Sams Club,20,7
+Sams Club,14,5
+Sams Club,16,5
+Sams Club,8,5
+Sams Club,22,3
+Sams Club,23,3
+Sams Club,19,3
+Sams Club,0,2
+Sams Club,6,1
+Sams Club,5,1
+Sams Club,21,1
+Sams Club,7,1
+Self-Gen,14,1
+Self-Gen,9,1
+SF CBS 4pm News,17,8
+SF CBS 4pm News,12,2
+Signs,16,2
+Signs,10,1
+Signs,12,1
+Siren,11,18
+Siren,13,18
+Siren,14,14
+Siren,19,11
+Siren,17,11
+Siren,18,10
+Siren,10,10
+Siren,9,9
+Siren,12,7
+Siren,15,6
+Siren,20,6
+Siren,16,5
+Siren,21,2
+Social Blue,9,8
+Social Blue,14,6
+Social Blue,11,4
+Social Blue,16,3
+Social Blue,12,3
+Social Blue,13,2
+Social Blue,10,2
+Social Blue,19,1
+Social Blue,20,1
+Social Blue,7,1
+Spectrum,10,2
+Spectrum,12,1
+STL Valpak,12,1
+Sweeps,20,1
+Swish - Meta,19,7
+Swish - Meta,9,6
+Swish - Meta,14,6
+Swish - Meta,13,5
+Swish - Meta,15,5
+Swish - Meta,12,5
+Swish - Meta,17,4
+Swish - Meta,10,4
+Swish - Meta,18,4
+Swish - Meta,11,3
+Swish - Meta,20,2
+Swish - Meta,16,1
+Swish - Meta,23,1
+Swish - Meta,21,1
+Television,9,8
+Television,17,5
+Television,16,5
+Television,13,5
+Television,11,3
+Television,18,3
+Television,12,3
+Television,10,3
+Television,14,2
+Television,19,2
+Television,15,2
+Television,6,1
+Television,20,1
+Television,21,1
+Thinx,20,2
+Thinx,9,1
+Thinx,10,1
+Thinx,14,1
+Three Ships,9,52
+Three Ships,13,42
+Three Ships,12,34
+Three Ships,20,32
+Three Ships,11,29
+Three Ships,15,26
+Three Ships,10,25
+Three Ships,16,25
+Three Ships,14,25
+Three Ships,17,20
+Three Ships,19,20
+Three Ships,18,15
+Three Ships,21,6
+Three Ships,8,5
+Three Ships,5,2
+Three Ships,7,1
+Three Ships,23,1
+Walk In,14,1
+Walmart,10,120
+Walmart,9,113
+Walmart,11,63
+Walmart,14,59
+Walmart,13,56
+Walmart,12,56
+Walmart,16,45
+Walmart,15,36
+Walmart,18,36
+Walmart,17,35
+Walmart,19,19
+Walmart,20,14
+Walmart,8,10
+Walmart,21,5
+Walmart,7,5
+Walmart,6,4
+Walmart,23,4
+Walmart,22,3
+Walmart,5,1
+Walmart,0,1
+Walmart,4,1
+Walmart,1,1
+Walmart,2,1
+Walmart,3,1
+Website,9,851
+Website,10,547
+Website,11,387
+Website,12,384
+Website,14,370
+Website,15,341
+Website,13,336
+Website,17,271
+Website,16,268
+Website,18,230
+Website,20,203
+Website,19,202
+Website,21,99
+Website,8,48
+Website,22,28
+Website,23,18
+Website,7,14
+Website,6,7
+Website,0,6
+Website,5,5
+Website,1,4
+Website,3,3
+Website,4,1
+Website,2,1
+Website Organic,15,7
+Website Organic,9,5
+Website Organic,10,4
+Website Organic,16,4
+Website Organic,17,3
+Website Organic,14,3
+Website Organic,11,2
+Website Organic,12,2
+Website Organic,13,1
+Website Organic,20,1
+Website Organic,19,1
+YouTube,13,1

@@ -2,10 +2,10 @@
 
 import React from 'react';
 import SlideLayout from '@/components/layout/SlideLayout';
-import BarChart from '@/components/charts/BarChart';
-import LineChart from '@/components/charts/LineChart';
 import HeatMap from '@/components/charts/HeatMap';
+import LineChart from '@/components/charts/LineChart';
 import RecommendationCard from '@/components/cards/RecommendationCard';
+import { parseOptimalFollowUpTiming } from '@/utils/csvParser';
 
 // This would normally be fetched from an API or parsed from the CSV files
 // For now, we're using sample data
@@ -16,32 +16,30 @@ const sampleFollowUpData = [
   { initial_message_day: 'Thursday', response_day: 'Thursday', response_count: 24883, avg_response_time: 8.64 },
   { initial_message_day: 'Wednesday', response_day: 'Wednesday', response_count: 23480, avg_response_time: 14.16 },
   { initial_message_day: 'Monday', response_day: 'Tuesday', response_count: 3597, avg_response_time: 80.95 },
+  { initial_message_day: 'Tuesday', response_day: 'Wednesday', response_count: 3485, avg_response_time: 75.32 },
   { initial_message_day: 'Thursday', response_day: 'Friday', response_count: 3431, avg_response_time: 80.25 },
+  { initial_message_day: 'Wednesday', response_day: 'Thursday', response_count: 3398, avg_response_time: 78.12 },
+  { initial_message_day: 'Friday', response_day: 'Saturday', response_count: 2975, avg_response_time: 82.45 },
+  { initial_message_day: 'Saturday', response_day: 'Sunday', response_count: 2564, avg_response_time: 86.32 },
+  { initial_message_day: 'Sunday', response_day: 'Monday', response_count: 3125, avg_response_time: 85.76 },
 ];
 
-const samplePeakHourData = [
-  { hour: 9, message_count: 10576, recommended_agents: 2 },
-  { hour: 10, message_count: 7656, recommended_agents: 2 },
-  { hour: 11, message_count: 6394, recommended_agents: 1 },
-  { hour: 12, message_count: 5898, recommended_agents: 1 },
-  { hour: 13, message_count: 5867, recommended_agents: 1 },
-  { hour: 14, message_count: 5668, recommended_agents: 1 },
-  { hour: 15, message_count: 5675, recommended_agents: 1 },
+// Sample data for response time chart
+const responseTimeData = [
+  { day: 'Monday', same_day: 42.9, next_day: 80.95 },
+  { day: 'Tuesday', same_day: 11.29, next_day: 75.32 },
+  { day: 'Wednesday', same_day: 14.16, next_day: 78.12 },
+  { day: 'Thursday', same_day: 8.64, next_day: 80.25 },
+  { day: 'Friday', same_day: 9.48, next_day: 82.45 },
+  { day: 'Saturday', same_day: 15.76, next_day: 86.32 },
+  { day: 'Sunday', same_day: 18.35, next_day: 85.76 },
 ];
 
-const sampleLeadSourceData = [
-  { lead_source: 'Exclusive', responses: 3481, opt_out_rate: 30.73 },
-  { lead_source: 'Internet', responses: 4320, opt_out_rate: 19.20 },
-  { lead_source: 'Home Advisor', responses: 127, opt_out_rate: 20.29 },
-  { lead_source: 'Canvass', responses: 703, opt_out_rate: 15.45 },
-  { lead_source: 'Home Show', responses: 157, opt_out_rate: 12.32 },
-];
-
-export default function Home() {
+export default function FollowUpTimingPage() {
   return (
     <SlideLayout 
-      title="Lead Performance Dashboard" 
-      subtitle="Data-driven insights and recommendations for optimizing lead management"
+      title="Optimal Follow-Up Timing" 
+      subtitle="Analysis of message response patterns by day of week"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
@@ -49,19 +47,19 @@ export default function Home() {
           <ul className="space-y-3">
             <li className="flex items-start">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-600 mr-3 flex-shrink-0">1</span>
-              <span className="text-gray-700">Highest response count on Monday (28,976) but longest response time (42.9 hrs)</span>
+              <span className="text-gray-700">Highest same-day response volumes occur on <strong>Monday (28,976)</strong>, followed by Tuesday (25,953)</span>
             </li>
             <li className="flex items-start">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-600 mr-3 flex-shrink-0">2</span>
-              <span className="text-gray-700">Peak message volume at 9AM (10,576) requiring 2 agents</span>
+              <span className="text-gray-700">Best cross-day transitions: Monday→Tuesday (3,597) and Thursday→Friday (3,431)</span>
             </li>
             <li className="flex items-start">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-600 mr-3 flex-shrink-0">3</span>
-              <span className="text-gray-700">Internet leads show highest response count (4,320)</span>
+              <span className="text-gray-700">Fastest same-day response times: Thursday (8.64 hrs) and Friday (9.48 hrs)</span>
             </li>
             <li className="flex items-start">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-blue-100 text-blue-600 mr-3 flex-shrink-0">4</span>
-              <span className="text-gray-700">Home Show leads have lowest opt-out rate (12.32%)</span>
+              <span className="text-gray-700">Monday has highest response volume but longest response time (42.9 hrs)</span>
             </li>
           </ul>
         </div>
@@ -75,7 +73,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </span>
-              <span className="text-gray-700">Optimize Monday staffing for faster response times</span>
+              <span className="text-gray-700">Prioritize Thursday and Friday for time-sensitive messages</span>
             </li>
             <li className="flex items-start">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-600 mr-3 flex-shrink-0">
@@ -83,7 +81,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </span>
-              <span className="text-gray-700">Schedule 2 agents for 9-10AM peak hours</span>
+              <span className="text-gray-700">Implement Monday→Tuesday and Thursday→Friday follow-up sequences</span>
             </li>
             <li className="flex items-start">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-600 mr-3 flex-shrink-0">
@@ -91,7 +89,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </span>
-              <span className="text-gray-700">Prioritize Internet leads during peak hours</span>
+              <span className="text-gray-700">Increase agent allocation on Monday to handle high volume</span>
             </li>
             <li className="flex items-start">
               <span className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-green-100 text-green-600 mr-3 flex-shrink-0">
@@ -99,88 +97,74 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </span>
-              <span className="text-gray-700">Apply Home Show messaging strategy to other sources</span>
+              <span className="text-gray-700">Develop specialized messaging for weekend leads (Saturday-Sunday)</span>
             </li>
           </ul>
         </div>
       </div>
       
       <div className="mb-8">
-        <BarChart
-          title="Response Count by Day"
-          subtitle="Number of responses and average response time by day"
-          data={sampleFollowUpData.filter(d => d.initial_message_day === d.response_day)}
-          xAxisKey="initial_message_day"
-          bars={[
-            { dataKey: 'response_count', fill: '#3b82f6', name: 'Response Count' },
+        <HeatMap
+          title="Response Count Heatmap by Day"
+          subtitle="Number of responses based on initial message day and response day"
+          data={sampleFollowUpData}
+          height={450}
+        />
+      </div>
+      
+      <div className="mb-8">
+        <LineChart
+          title="Average Response Time by Day"
+          subtitle="Comparison of same-day vs. next-day response times (hours)"
+          data={responseTimeData}
+          xAxisKey="day"
+          lines={[
+            { dataKey: 'same_day', stroke: '#3b82f6', name: 'Same Day Response Time (hrs)' },
+            { dataKey: 'next_day', stroke: '#ef4444', name: 'Next Day Response Time (hrs)' },
           ]}
           height={350}
         />
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <LineChart
-          title="Message Count by Hour"
-          subtitle="Hourly message volume and recommended agents"
-          data={samplePeakHourData}
-          xAxisKey="hour"
-          lines={[
-            { dataKey: 'message_count', stroke: '#3b82f6', name: 'Message Count' },
-          ]}
-          height={300}
-        />
-        
-        <BarChart
-          title="Lead Source Performance"
-          subtitle="Response count and opt-out rate by lead source"
-          data={sampleLeadSourceData}
-          xAxisKey="lead_source"
-          bars={[
-            { dataKey: 'responses', fill: '#10b981', name: 'Responses' },
-          ]}
-          height={300}
-        />
-      </div>
-      
       <div className="mb-8">
-        <h2 className="text-xl font-medium text-gray-900 mb-4">Strategic Recommendations</h2>
+        <h2 className="text-xl font-medium text-gray-900 mb-4">Follow-Up Strategy Recommendations</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <RecommendationCard
-            title="Monday Optimization"
-            description="Improve response times for Monday leads through strategic staffing."
-            category="staffing"
+            title="Day-Based Follow-Up Protocol"
+            description="Implement day-specific follow-up strategies based on response patterns."
+            category="follow-up"
             impact="high"
             implementation="medium"
             actionItems={[
-              "Increase Monday morning staff by 25%",
-              "Implement automated initial responses",
-              "Create dedicated Monday response team"
+              "Monday messages: follow up Tuesday morning",
+              "Thursday messages: follow up Friday morning",
+              "Implement 4-hour follow-up for quick responders"
             ]}
           />
           
           <RecommendationCard
-            title="Peak Hour Management"
-            description="Optimize staffing and processes for 9-10AM peak hours."
-            category="operations"
-            impact="high"
+            title="Weekend Response Strategy"
+            description="Develop specialized approach for weekend messaging and follow-ups."
+            category="follow-up"
+            impact="medium"
             implementation="easy"
             actionItems={[
-              "Schedule 2 agents for 9-10AM",
-              "Prepare response templates",
-              "Implement load balancing system"
+              "Send Sunday evening messages for Monday morning visibility",
+              "Create weekend-specific templates with longer response expectations",
+              "Implement automated follow-up for weekend leads"
             ]}
           />
           
           <RecommendationCard
-            title="Lead Source Strategy"
-            description="Optimize lead handling based on source performance."
-            category="marketing"
+            title="Response Time Optimization"
+            description="Adjust message timing to minimize response times."
+            category="follow-up"
             impact="medium"
             implementation="complex"
             actionItems={[
-              "Prioritize Internet leads",
-              "Apply Home Show messaging tactics",
-              "Reduce Exclusive lead opt-outs"
+              "Send time-sensitive messages on Thursday/Friday",
+              "Implement lead scoring based on day-specific response likelihood",
+              "Create urgency indicators for Monday messages"
             ]}
           />
         </div>
